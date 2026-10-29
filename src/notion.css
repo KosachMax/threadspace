@@ -1,0 +1,131 @@
+.ns-surface{--ns-bg:#f7f7f5;--ns-text:#37352f;--ns-muted:#787774;--ns-faint:#9b9a97;--ns-hover:#eaeae7;--ns-active:#e6e6e3;--ns-border:#e8e8e5;--ns-popup:#fff;--ns-input:#f7f7f5;--ns-ring:#2383e2;--ns-color-default:#37352f;--ns-color-gray:#787774;--ns-color-brown:#9f6b53;--ns-color-orange:#d9730d;--ns-color-yellow:#b68b20;--ns-color-green:#448361;--ns-color-blue:#337ea9;--ns-color-purple:#9065b0;--ns-color-pink:#c14c8a;--ns-color-red:#d44c47;--ns-tint-default:#ededeb;--ns-tint-gray:#f1f1ef;--ns-tint-brown:#f4eeee;--ns-tint-orange:#fbecdd;--ns-tint-yellow:#fbf3db;--ns-tint-green:#edf3ec;--ns-tint-blue:#e7f3f8;--ns-tint-purple:#f6f3f9;--ns-tint-pink:#faf1f5;--ns-tint-red:#fdebec;color:var(--ns-text);font:13px/1.5 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;-webkit-font-smoothing:antialiased;color-scheme:light}
+.ns-surface[data-theme=dark]{--ns-bg:#202020;--ns-text:#d4d4d4;--ns-muted:#9b9b9b;--ns-faint:#7f7f7f;--ns-hover:#2c2c2c;--ns-active:#333333;--ns-border:#303030;--ns-popup:#252525;--ns-input:#2b2b2b;--ns-color-default:#d4d4d4;--ns-color-gray:#9b9b9b;--ns-color-brown:#ba856f;--ns-color-orange:#c77d48;--ns-color-yellow:#c0a15c;--ns-color-green:#6d9976;--ns-color-blue:#5e87c9;--ns-color-purple:#9d80b9;--ns-color-pink:#c16b9a;--ns-color-red:#cc7571;--ns-tint-default:#353535;--ns-tint-gray:#2f2f2f;--ns-tint-brown:#3c302b;--ns-tint-orange:#442f22;--ns-tint-yellow:#403929;--ns-tint-green:#28372e;--ns-tint-blue:#283343;--ns-tint-purple:#342e40;--ns-tint-pink:#412e38;--ns-tint-red:#442e2b;color-scheme:dark}
+.ns-surface [data-color=default]{--ns-color:var(--ns-color-default);--ns-tint:var(--ns-tint-default)}.ns-surface [data-color=gray]{--ns-color:var(--ns-color-gray);--ns-tint:var(--ns-tint-gray)}.ns-surface [data-color=brown]{--ns-color:var(--ns-color-brown);--ns-tint:var(--ns-tint-brown)}.ns-surface [data-color=orange]{--ns-color:var(--ns-color-orange);--ns-tint:var(--ns-tint-orange)}.ns-surface [data-color=yellow]{--ns-color:var(--ns-color-yellow);--ns-tint:var(--ns-tint-yellow)}.ns-surface [data-color=green]{--ns-color:var(--ns-color-green);--ns-tint:var(--ns-tint-green)}.ns-surface [data-color=blue]{--ns-color:var(--ns-color-blue);--ns-tint:var(--ns-tint-blue)}.ns-surface [data-color=purple]{--ns-color:var(--ns-color-purple);--ns-tint:var(--ns-tint-purple)}.ns-surface [data-color=pink]{--ns-color:var(--ns-color-pink);--ns-tint:var(--ns-tint-pink)}.ns-surface [data-color=red]{--ns-color:var(--ns-color-red);--ns-tint:var(--ns-tint-red)}
+.ns-surface *{box-sizing:border-box}.ns-surface button,.ns-surface input,.ns-surface select{font:inherit}.ns-surface button{color:inherit;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background 90ms ease}.ns-surface button:disabled{opacity:.45;cursor:default}.ns-surface button:focus-visible,.ns-surface a:focus-visible,.ns-surface input:focus-visible,.ns-surface select:focus-visible{outline:2px solid var(--ns-ring);outline-offset:-2px}.ns-surface svg{width:16px;height:16px;flex:none}.ns-sidebar{background:var(--ns-bg);min-height:100%;width:100%;padding:7px 8px 12px;display:flex;flex-direction:column;gap:0;overflow-x:hidden}.ns-top-controls{margin:2px 0 16px}.ns-icon-button{border-radius:4px;display:inline-flex;align-items:center;justify-content:center;flex:none;width:23px;height:23px;padding:3px!important;color:var(--ns-muted)!important}.ns-icon-button:hover{background:var(--ns-border)!important;color:var(--ns-text)!important}.ns-icon-button svg{width:15px;height:15px}.ns-section-heading{height:27px;display:flex;align-items:center;gap:4px;padding:0 5px!important;font-size:12px!important;color:var(--ns-muted)!important;width:100%;text-align:left;border-radius:4px}.ns-section-heading>svg{width:10px;height:10px;color:var(--ns-faint)}.ns-section-heading:hover{background:var(--ns-hover)}.ns-projects-label{font-size:12px;color:var(--ns-muted);padding:0 11px;margin:3px 0 9px;font-weight:500}.ns-project{margin:0 0 9px}.ns-project-heading{height:32px;display:flex;align-items:center;gap:2px;padding:0 3px;border-radius:4px}.ns-project-heading:hover{background:var(--ns-hover)}.ns-toggle{width:18px;height:25px;flex:none;display:flex;align-items:center;justify-content:center;color:var(--ns-faint)!important;padding:0!important;border-radius:4px}.ns-toggle:hover{background:var(--ns-border)}.ns-toggle svg{width:13px;height:13px;transition:transform 100ms ease}.ns-expanded{transform:rotate(90deg)}.ns-project-emoji{width:25px;height:27px;flex:none;display:inline-flex;align-items:center;justify-content:center;padding:0!important;border-radius:4px}.ns-project-emoji:hover{background:var(--ns-border)}.ns-project-emoji svg{color:var(--ns-color,var(--ns-muted));width:17px;height:17px}.ns-emoji{font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;font-size:18px;line-height:1;display:block;font-weight:400}.ns-project-name{color:var(--ns-color,var(--ns-text))!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;text-align:left;padding:3px 3px!important;font-size:13px!important;font-weight:550!important;letter-spacing:-.15px}.ns-project-add{opacity:0}.ns-project-heading:hover .ns-project-add,.ns-project-heading:focus-within .ns-project-add{opacity:1}.ns-project-children{margin:1px 0 5px 16px}.ns-row{--depth:0;--ns-row-height:30px;--ns-action-size:24px;display:flex;align-items:center;min-height:var(--ns-row-height);padding:0 calc((var(--ns-row-height) - var(--ns-action-size))/2) 0 calc(2px + var(--depth)*15px);border-radius:4px;position:relative;min-width:0;color:var(--ns-muted);content-visibility:auto;contain-intrinsic-size:auto var(--ns-row-height)}.ns-row:hover{background:var(--ns-hover)}.ns-row.is-active{background:var(--ns-active);color:var(--ns-text)}.ns-row.is-unread .ns-row-title{color:var(--ns-text);font-weight:600}.ns-row-spacer{width:18px;flex:none}.ns-link{min-width:0;flex:1;text-decoration:none;color:inherit;display:flex;align-items:center;gap:6px;min-height:var(--ns-row-height);padding:3px 0;outline-offset:-1px!important}.ns-link>svg{width:15px;height:15px;color:var(--ns-faint);margin-right:1px}.ns-row.is-active .ns-link>svg{color:var(--ns-muted)}.ns-provider{width:15px;height:15px;flex:none;display:inline-flex;align-items:center;justify-content:center;color:var(--ns-muted);margin-right:1px}.ns-provider>.ns-provider-icon,.ns-provider svg{width:15px;height:15px;flex:none}.ns-row-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1;font-size:13px;line-height:1.5}.ns-row-title>*{white-space:nowrap}.ns-row-end{display:grid;grid-template-columns:repeat(2,var(--ns-action-size));grid-template-rows:var(--ns-action-size);align-items:center;justify-items:center;flex:none;margin-left:6px;width:calc(2 * var(--ns-action-size));min-width:calc(2 * var(--ns-action-size));height:var(--ns-action-size)}.ns-status{grid-column:2;grid-row:1;width:var(--ns-action-size);height:var(--ns-action-size);display:flex;align-items:center;justify-content:center;color:var(--ns-muted)}.ns-status:empty{display:none}.ns-hover-tools{grid-column:1 / -1;grid-row:1;display:none;grid-template-columns:repeat(2,var(--ns-action-size));align-items:center;justify-items:center;width:100%;height:100%}.ns-hover-tools>.ns-archive{grid-column:1;grid-row:1}.ns-hover-tools>:not(.ns-archive){grid-column:2;grid-row:1}.ns-row-end .ns-icon-button{width:var(--ns-action-size);height:var(--ns-action-size)}.ns-row-end .ns-icon-button svg{width:16px;height:16px}.ns-row:hover .ns-hover-tools,.ns-row:focus-within .ns-hover-tools,.ns-row:has([data-state=open]) .ns-hover-tools{display:grid}.ns-row:hover .ns-status,.ns-row:focus-within .ns-status,.ns-row:has([data-state=open]) .ns-status{display:none}.ns-shortcut{grid-column:1 / -1;justify-self:end;padding:0 4px;font-size:10px;line-height:18px;border:1px solid var(--ns-border);border-radius:3px;color:var(--ns-muted)}.ns-rename{border:1px solid var(--ns-ring);background:var(--ns-popup);color:var(--ns-text);height:25px;min-width:0;width:100%;padding:2px 5px;font-size:13px;border-radius:3px;flex:1}.ns-empty{font-size:12px;color:var(--ns-muted);line-height:1.7;margin:12px 8px;padding:12px 0;text-align:center}.ns-error{font-size:12px;line-height:1.6;color:var(--ns-color-red);padding:8px 12px;margin:0}.ns-empty-project{font-size:12px!important;padding:6px 27px!important;color:var(--ns-faint)!important;border-radius:4px;width:100%;text-align:left}.ns-empty-project:hover{background:var(--ns-hover)}.ns-show-more{font-size:12px!important;color:var(--ns-muted)!important;padding:6px 25px!important;border-radius:4px;width:100%;text-align:left}.ns-show-more:hover{background:var(--ns-hover)}.ns-bottom{margin-top:auto;display:flex;gap:5px;padding:22px 4px 0;align-items:center}.ns-bottom-button{display:flex;align-items:center;gap:9px;font-size:13px!important;color:var(--ns-muted)!important;flex:1;padding:7px 8px!important;text-align:left;border-radius:4px}.ns-bottom-button svg{width:16px;height:16px}.ns-bottom-button:hover,.ns-bottom-button.is-active{background:var(--ns-hover)}
+.ns-activity-spinner{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;flex:none;color:var(--ns-muted)}
+.ns-activity-spinner g{transform-origin:8px 8px;transform-box:view-box;animation:ns-activity-turn 1s linear infinite}
+@keyframes ns-activity-turn{to{transform:rotate(360deg)}}
+/* The picker is portalled, so carry the same scoped palette on its root. */
+.ns-picker{width:326px;max-width:calc(100vw - 20px);background:var(--ns-popup);color:var(--ns-text);border:1px solid var(--ns-border);border-radius:8px;box-shadow:0 4px 24px #0000001c,0 0 0 1px #00000003;z-index:10000;overflow:hidden;outline:none}.ns-picker-search{display:flex;align-items:center;gap:7px;margin:11px 12px 7px;border:1px solid var(--ns-border);border-radius:5px;padding:6px 8px;background:var(--ns-input);color:var(--ns-muted);height:32px}.ns-picker-search input{width:100%;min-width:0;border:0;background:none;color:var(--ns-text);font-size:12px;padding:0;outline:none!important}.ns-picker-search input::placeholder{color:var(--ns-faint)}.ns-picker-search svg{width:14px;height:14px}.ns-emoji-categories{display:flex;align-items:center;justify-content:space-between;margin:0 12px 6px;gap:10px}.ns-emoji-categories select{background:none;color:var(--ns-muted);border:0;font-size:11px;width:100%;min-width:0;padding:5px 1px}.ns-emoji-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));padding:2px 12px 10px;max-height:250px;min-height:180px;overflow:auto;align-content:start;scrollbar-width:thin;scrollbar-color:var(--ns-border) transparent;gap:1px}.ns-emoji-grid>button{font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;font-size:23px;line-height:1;width:100%;height:35px;border-radius:4px;padding:4px 0;display:grid;place-items:center}.ns-emoji-grid>button:hover,.ns-emoji-grid>button[aria-pressed=true]{background:var(--ns-hover)}.ns-emoji-grid .ns-empty{grid-column:1/-1}.ns-custom-emoji{display:flex;align-items:end;border-top:1px solid var(--ns-border);padding:9px 12px;gap:8px}.ns-custom-emoji label{flex:1;min-width:0;font-size:10px;color:var(--ns-muted)}.ns-custom-emoji label span{display:block;margin-bottom:3px}.ns-custom-emoji input{border:1px solid var(--ns-border);border-radius:4px;background:var(--ns-input);color:var(--ns-text);font-size:11px;width:100%;padding:5px 6px;min-height:28px}.ns-text-button{font-size:11px!important;padding:5px 7px!important;color:var(--ns-muted)!important;border-radius:4px}.ns-text-button:hover{background:var(--ns-hover)}.ns-picker-footer{padding:6px 8px;border-top:1px solid var(--ns-border)}.ns-colors{padding:6px}.ns-color-option{width:100%;height:31px;display:flex;align-items:center;gap:9px;padding:4px 9px!important;font-size:12px!important;border-radius:4px}.ns-color-option:hover{background:var(--ns-hover)}.ns-color-sample{font-size:14px;line-height:24px;font-weight:500;color:var(--ns-color);background:var(--ns-tint);border-radius:3px;width:23px;height:23px;text-align:center}.ns-color-option svg{margin-left:auto;color:var(--ns-muted);width:14px;height:14px}
+@media(hover:none),(pointer:coarse){.ns-row{--ns-row-height:38px;--ns-action-size:28px}.ns-hover-tools{display:grid}.ns-row .ns-status{display:none}.ns-project-heading{height:38px}.ns-project-add{opacity:1}.ns-icon-button{width:28px;height:28px}.ns-project-emoji{width:28px;height:32px}.ns-toggle{min-height:32px}.ns-emoji-grid>button{height:38px}}
+@media(prefers-reduced-motion:reduce){.ns-surface *{transition:none!important;animation:none!important}}
+
+.ns-state{width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;flex:none;color:var(--ns-muted)}
+.ns-state svg{width:16px;height:16px;stroke-width:1.5}
+.ns-state-waiting{color:var(--ns-color-yellow)}.ns-state-error{color:var(--ns-color-red)}.ns-state-unread{color:var(--ns-ring)}
+.ns-result-dot{width:6px;height:6px;border-radius:50%;background:currentColor;display:block}
+.ns-project-summary{display:inline-flex;gap:4px;align-items:center;flex:none;margin-left:3px}
+.ns-summary-group{display:inline-flex;align-items:center;gap:4px}.ns-summary-separator{font-size:11px;color:var(--ns-faint)}.ns-summary-item{display:inline-flex;align-items:center;gap:3px;font-size:11px;font-variant-numeric:tabular-nums;color:var(--ns-muted)}
+.ns-summary-item>.ns-state,.ns-summary-item>.ns-activity-spinner{width:13px;height:13px}.ns-summary-item svg{width:13px;height:13px}
+
+.ns-native-state,.ns-native-state>span{display:inline-flex;align-items:center;justify-content:center}
+
+/* ── Review 2026-10-21: BB surface, wider titles, instant selection, contrast ── */
+/* Surface follows BB's sidebar; row height and font stay Notion. */
+.ns-surface{--ns-bg:var(--sidebar,#fafafa);--ns-muted:#696864;--ns-faint:#878682;--ns-hover:rgba(55,53,47,.06);--ns-active:rgba(55,53,47,.11);--ns-waiting:#a5700f;--ns-indent:14px}
+.ns-surface[data-theme=dark]{--ns-bg:var(--sidebar,#1b1b1b);--ns-muted:#a3a3a3;--ns-faint:#8a8a8a;--ns-hover:rgba(255,255,255,.05);--ns-active:rgba(255,255,255,.1);--ns-waiting:#d1a94e}
+.ns-picker.ns-surface{--ns-bg:var(--ns-popup)}
+.ns-state-waiting{color:var(--ns-waiting)}
+.ns-empty-project{color:var(--ns-muted)!important}
+
+/* 1 · Titles: no permanent right gutter, no empty chevron spacer. */
+.ns-project-children{margin-left:0}
+.ns-row{padding:0 6px 0 calc(6px + (var(--depth) + 1) * var(--ns-indent));border-radius:6px}
+.ns-row-spacer{display:none}
+.ns-link{gap:6px}
+.ns-provider{width:20px;height:20px;margin:0;color:var(--ns-faint)}
+.ns-row-end{display:flex;width:auto;min-width:0;height:auto;margin-left:0}
+.ns-status{width:auto;min-width:20px;height:20px;margin-left:6px}
+.ns-hover-tools{position:absolute;right:3px;top:50%;transform:translateY(-50%);width:auto;height:auto}
+.ns-row:hover .ns-link,.ns-row:focus-within .ns-link,.ns-row:has([data-state=open]) .ns-link{-webkit-mask-image:linear-gradient(to left,transparent 46px,#000 70px);mask-image:linear-gradient(to left,transparent 46px,#000 70px)}
+/* Parent threads: chevron sits over the provider icon slot, shown on hover. */
+.ns-row.has-children>.ns-toggle{position:absolute;top:50%;transform:translateY(-50%);left:calc(4px + (var(--depth) + 1) * var(--ns-indent));width:24px;height:24px;z-index:1;display:none;background:var(--ns-bg)}
+.ns-row.has-children:hover>.ns-toggle,.ns-row.has-children:focus-within>.ns-toggle{display:flex;background:none}
+.ns-row.has-children:hover .ns-provider,.ns-row.has-children:focus-within .ns-provider{visibility:hidden}
+.ns-empty-project,.ns-show-more{padding-left:calc(6px + var(--ns-indent) + 26px)!important}
+
+/* 2 · Selection shows on press, before BB's route settles. */
+.ns-row:active,.ns-row.is-pending,.ns-row.is-active{background:var(--ns-active);color:var(--ns-text)}
+.ns-row.is-pending .ns-row-title,.ns-row.is-active .ns-row-title{font-weight:500}
+.ns-row.is-pending .ns-provider,.ns-row.is-active .ns-provider{color:var(--ns-text)}
+
+/* 3 · Project colour lives in the emoji tile; the name uses text colour. */
+.ns-project-name{color:var(--ns-text)!important}
+.ns-project:not([data-color=default]) .ns-project-emoji{background:color-mix(in oklab,var(--ns-color) 20%,transparent)}
+.ns-surface[data-theme=dark] .ns-project:not([data-color=default]) .ns-project-emoji{background:color-mix(in oklab,var(--ns-color) 32%,transparent)}
+
+/* 4 · Collapsed summary sits in the status column; "+" overlays it on hover. */
+.ns-project-heading{position:relative;padding-right:6px}
+.ns-project-summary{margin-left:6px;gap:2px}
+.ns-summary-item{gap:0}
+.ns-summary-item>.ns-state,.ns-summary-item>.ns-activity-spinner{width:20px;height:20px}
+.ns-summary-item svg{width:14px;height:14px}
+.ns-project-add{position:absolute;right:3px;top:50%;transform:translateY(-50%);display:none!important}
+.ns-project-heading:hover .ns-project-add,.ns-project-heading:focus-within .ns-project-add{display:inline-flex!important;opacity:1}
+.ns-project-heading:hover .ns-project-summary,.ns-project-heading:focus-within .ns-project-summary{visibility:hidden}
+@media(hover:none),(pointer:coarse){.ns-project-add{display:inline-flex!important}.ns-project-summary{margin-right:30px}.ns-row.has-children>.ns-toggle{display:flex}.ns-row.has-children .ns-provider{visibility:hidden}}
+
+/* Project colour fills the whole project row, like a Notion background colour. */
+.ns-project:not([data-color=default]) .ns-project-emoji,.ns-surface[data-theme=dark] .ns-project:not([data-color=default]) .ns-project-emoji{background:none}
+.ns-project:not([data-color=default])>.ns-project-heading{background:var(--ns-tint)}
+.ns-project:not([data-color=default])>.ns-project-heading:hover{background:linear-gradient(var(--ns-hover),var(--ns-hover)),var(--ns-tint)}
+.ns-project:not([data-color=default])>.ns-project-heading .ns-toggle:hover,.ns-project:not([data-color=default])>.ns-project-heading .ns-project-emoji:hover,.ns-project:not([data-color=default])>.ns-project-heading .ns-icon-button:hover{background:var(--ns-hover)!important}
+
+/* Project names a step bolder. */
+.ns-project-name{font-weight:650!important}
+
+/* Project names read as section headings (h6-like: 14px, bold). */
+.ns-project-name{font-size:14px!important;font-weight:650!important;letter-spacing:-.2px}
+
+
+/* ── Sections: one heading style; chevron on hover, Notion-like ── */
+.ns-section{margin-bottom:8px}
+.ns-section-heading{height:28px;display:flex;align-items:center;gap:4px;width:100%;padding:0 6px!important;border-radius:6px;font-size:12px!important;font-weight:500;color:var(--ns-muted)!important;text-align:left}
+.ns-section-heading:hover{background:var(--ns-hover)}
+.ns-section-heading>.ns-section-chevron{width:12px;height:12px;opacity:0;transition:transform 100ms ease}
+.ns-section-heading:hover>.ns-section-chevron,.ns-section-heading:focus-visible>.ns-section-chevron{opacity:1}
+.ns-section-count{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:600;color:var(--ns-waiting)}
+.ns-row-context{flex:none;max-width:40%;margin-left:6px;font-size:11px;color:var(--ns-faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ── Desktop project row: emoji becomes the chevron on hover; "···" opens icon and colour ── */
+.ns-sidebar:not([data-compact=true]) .ns-project-icon{position:relative;width:24px!important;height:24px;border-radius:4px}
+.ns-project-icon .ns-project-chevron{position:absolute;inset:4px;width:16px;height:16px;display:none}
+.ns-sidebar:not([data-compact=true]) .ns-project-heading:hover .ns-project-icon>.ns-emoji,.ns-sidebar:not([data-compact=true]) .ns-project-heading:hover .ns-project-icon>.ns-project-folder,.ns-sidebar:not([data-compact=true]) .ns-project-icon:focus-visible>.ns-emoji{visibility:hidden}
+.ns-sidebar:not([data-compact=true]) .ns-project-heading:hover .ns-project-chevron,.ns-sidebar:not([data-compact=true]) .ns-project-icon:focus-visible .ns-project-chevron{display:block}
+.ns-project-tools{display:none;align-items:center}
+.ns-project-tools .ns-icon-button,.ns-project-add{width:24px!important;height:24px!important}
+.ns-sidebar:not([data-compact=true]) .ns-project-heading{gap:4px}
+.ns-sidebar:not([data-compact=true]) .ns-project-tools{position:absolute;right:27px;top:50%;transform:translateY(-50%)}
+.ns-sidebar:not([data-compact=true]) .ns-project-heading:hover .ns-project-tools,.ns-sidebar:not([data-compact=true]) .ns-project-heading:focus-within .ns-project-tools,.ns-project-heading:has([data-state=open]) .ns-project-tools{display:flex}
+.ns-project-heading:has([data-state=open]) .ns-project-add{display:inline-flex!important}
+.ns-project-heading:has([data-state=open]) .ns-project-summary{visibility:hidden}
+
+/* ── Pinned threads lead their project ── */
+.ns-pinned-last{border-bottom:1px solid var(--ns-border);margin:0 6px 2px calc(6px + var(--ns-indent));padding-bottom:2px}
+.ns-pinned-last>div{margin:0 -6px 0 calc(-6px - var(--ns-indent))}
+.ns-state-pinned{color:var(--ns-faint)}
+.ns-state-pinned svg{width:14px;height:14px}
+.ns-pin.is-pinned{color:var(--ns-text)!important}
+.ns-sidebar:not([data-compact=true]) .ns-hover-tools{grid-template-columns:repeat(3,24px)!important}
+.ns-sidebar:not([data-compact=true]) .ns-hover-tools>.ns-pin{grid-column:1}
+.ns-sidebar:not([data-compact=true]) .ns-hover-tools>.ns-archive{grid-column:2}
+.ns-sidebar:not([data-compact=true]) .ns-hover-tools>:not(.ns-archive):not(.ns-pin){grid-column:3}
+.ns-sidebar:not([data-compact=true]) .ns-row:hover .ns-link,.ns-sidebar:not([data-compact=true]) .ns-row:focus-within .ns-link,.ns-sidebar:not([data-compact=true]) .ns-row:has([data-state=open]) .ns-link{-webkit-mask-image:linear-gradient(to left,transparent 70px,#000 94px);mask-image:linear-gradient(to left,transparent 70px,#000 94px)}
+
+/* ── Provider icons stay quiet; the selected thread gets full colour ── */
+.ns-provider>.ns-provider-icon{color:inherit!important}
+
+/* ── Project drag and drop ── */
+.ns-sidebar:not([data-compact=true]) .ns-project-heading[title]{cursor:default}
+.ns-project.is-dragging{opacity:.45}
+.ns-project.is-drop-before{box-shadow:0 -2px 0 var(--ns-ring)}
+.ns-project.is-drop-after{box-shadow:0 2px 0 var(--ns-ring)}
+
+/* ── Colour and emoji in one picker ── */
+.ns-picker-head{display:flex;align-items:center;justify-content:space-between;height:30px;padding:0 8px 0 13px;font-size:11px;font-weight:500;color:var(--ns-muted)}
+.ns-picker-head:first-child{height:38px}
+.ns-color-row{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;padding:0 12px 8px}
+.ns-color-swatch{height:26px;padding:0!important;border-radius:5px;font-size:12px;font-weight:600;color:var(--ns-color)!important;background:var(--ns-tint)!important;box-shadow:inset 0 0 0 1px var(--ns-border)}
+.ns-color-swatch[data-color=default]{background:var(--ns-popup)!important}
+.ns-color-swatch[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--ns-color)}
+.ns-picker-footer{display:flex;justify-content:space-between}

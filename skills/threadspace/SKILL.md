@@ -1,0 +1,26 @@
+---
+name: threadspace
+description: Configure or troubleshoot the Threadspace Notion-style sidebar, project emoji, application theme, or hover archive action.
+---
+
+Threadspace replaces the sidebar thread list. Select it with `bb settings ui set sidebar.threadListProvider threadspace/notion-sidebar`; restore BB's list with `bb settings ui set sidebar.threadListProvider thread-list/thread-list`.
+
+The UI follows BB's document language (`document.documentElement.lang`) and updates live, including open emoji pickers and status labels. Russian and English are supported. Fall back to the browser language when the host attribute is empty, and to English for other languages. There is no separate language setting. Preserve user-authored thread and project names. Russian emoji names and search keywords come from bundled Unicode CLDR data; keep its license and pinned source attribution when updating them.
+
+Click a project's emoji to choose another emoji or a Notion text color. These values belong to the plugin's persistent storage and sync between windows. The project itself is unchanged.
+
+The sidebar and emoji picker follow BB's current light or dark theme. Thread search uses BB's native search. Keep these host-owned controls in BB; the plugin has no separate search field or theme switch. Collapsed groups are local to each client.
+
+The activity indicator has eight thin spokes and no user-facing style selector. All indicators share a wall-clock animation phase, including late mounts, and respect reduced motion.
+
+Live BB state drives thread indicators: a question bubble for pending user input, a warning triangle for execution or queued-send errors, a clock for queue/host/environment waits, and one dot for an unread completion. Hover text explains the state without inventing a failure cause. Only collapsed projects with current work or pending user input show a compact count-plus-spinner / count-plus-question summary. Omit zero groups, a lone separator, completed/unread results and total thread counts. Hidden and archived threads are excluded. Preserve native workflow, goal, plan, draft and third-party status semantics.
+
+The archive button appears on desktop row hover and keyboard focus. It runs BB's core archive action, retaining its confirmation, child-thread handling, pane cleanup and Undo. Use the archive view to restore a thread.
+
+“Regenerate title” is a native thread-menu registration, also available in the header, context menu and compact drawer. It reads bounded conversation text only on activation and writes the chosen thread's title through the public SDK. It respects the current BB → AI services → Thread titles selection on every request. The public bb-account authenticated AI RPC supports bb cloud (explicit or first ready in Automatic); the installed SDK has no general AI-service invocation, so other selections, including Codex, show an unsupported-service error. Preserve Off and unavailable states. The service owns the model; never replace it with the thread's agent model. Keep the prior title on failure, deduplicate requests and detect a concurrent manual rename before saving. Updating the title does not rename the branch or worktree.
+
+Hovering or focusing any thread opens the Context preview after a short delay, including nested, favorite and archived rows. Show that thread's title, project, environment/worktree, branch, Git summary, current status, latest message excerpt, provider/model and updated time. Expand the environment line for its full path and machine. Escape dismisses it. Hover must never navigate, mark read, load the thread runtime or mutate host state. Load bounded details lazily through public SDK reads; cancel stale requests, bound the cache and show missing data honestly. Git ahead/behind is relative to the explicitly named base ref, not the remote upstream. Keep one preview open, retain it while the pointer is inside it, and follow the app language and theme.
+
+On compact or primary touch input, use larger targets and two-line titles. The single persistent row menu button shows the live status in place of its dots. Archive remains in BB's native menu. Its inline “Thread information” action opens Context in a modal bottom sheet without navigation/read changes; touch long-press uses the same native menu. Emoji/color selection also uses a bottom sheet with a fixed close control, scrolling content and keyboard-aware height. Keep touch mode after rotation beyond the host's width breakpoint. Open the sheet after the native menu closes; pointerleave/blur must preserve a pending explicit open, while row removal cancels it. Touch scrolling does not highlight or open a thread; a completed tap uses native navigation and onNavigate to close BB's sidebar. Project names toggle their groups; a parent's provider/disclosure share one touch target.
+
+The plugin owns only the thread-list area. Keep the native new-thread button, navigation rail and footer under BB's control. Use current public SDK APIs for changes and rebuild/reload after source edits.

@@ -1,0 +1,57 @@
+{
+  "name": "bb-plugin-threadspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "bb": ">=0.46",
+    "bbPluginSdk": ">=0.6.49"
+  },
+  "bb": {
+    "name": "Threadspace",
+    "description": "A Notion-style BB thread list: projects with emoji and colours, pinned threads per project, a waiting-for-you section and quiet status indicators.",
+    "branding": {
+      "icon": "PanelLeft"
+    },
+    "server": "./server.ts",
+    "app": "./app.tsx",
+    "skills": [
+      "skills"
+    ]
+  },
+  "scripts": {
+    "build": "bb plugin build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --no-experimental-webstorage node_modules/vitest/vitest.mjs run",
+    "screenshots:build": "esbuild screenshots/stand.tsx --bundle --outfile=screenshots/stand.bundle.js --format=iife --jsx=automatic --minify --loader:.json=json"
+  },
+  "dependencies": {
+    "@emoji-mart/data": "^1.2.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@get-bb/plugin-sdk": "0.6.49",
+    "@radix-ui/react-dialog": "^1.1.19",
+    "@radix-ui/react-popover": "^1.1.19",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "better-sqlite3": "^12.0.0",
+    "cron-parser": "^5.10.2",
+    "esbuild": "^0.28.0",
+    "hono": "^4.13.13",
+    "jsdom": "^27.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sonner": "^1.7.4",
+    "typescript": "^5.7.0",
+    "vitest": "^3.2.4"
+  },
+  "description": "A Notion-style BB thread list: projects with emoji and colours, pinned threads per project, a waiting-for-you section and quiet status indicators.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KosachMax/threadspace.git"
+  }
+}

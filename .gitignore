@@ -1,0 +1,5 @@
+node_modules/
+dist/
+prototype/
+scripts/build-preview.mjs
+screenshots/stand.bundle.*

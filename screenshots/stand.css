@@ -1,0 +1,15 @@
+*,::before,::after{box-sizing:border-box}
+html,body{margin:0;height:100%}
+.stand{display:flex;height:100vh;font:13px/1.5 "Inter",ui-sans-serif,system-ui,sans-serif}
+.stand-light{--sidebar:#fafafa;background:#fff;color:#333}
+.stand-dark{--sidebar:#1b1b1b;background:#151515;color:#c1c1c1}
+.stand-sidebar{width:300px;flex:none;background:var(--sidebar);border-right:1px solid color-mix(in oklab,currentColor 10%,transparent);display:flex;flex-direction:column;overflow:hidden}
+.stand-sidebar>.ns-sidebar{flex:1}
+.stand-head{height:28px;margin:12px 8px 4px;display:flex;align-items:center;gap:8px;padding:0 8px}
+.stand-head svg{width:16px;height:16px}
+.stand-logo{display:block;width:15px;height:15px;background:currentColor;-webkit-mask:var(--logo) center/contain no-repeat;mask:var(--logo) center/contain no-repeat}
+.stand-main{flex:1;padding:40px 80px;display:flex;flex-direction:column;gap:14px}
+.stand-title{font-size:15px;font-weight:600;margin-bottom:12px}
+.stand-msg{height:56px;border-radius:10px;background:color-mix(in oklab,currentColor 6%,transparent);max-width:640px}
+.stand-msg.short{max-width:380px}
+.stand-composer{margin-top:auto;max-width:720px;height:80px;border-radius:12px;border:1px solid color-mix(in oklab,currentColor 15%,transparent);padding:14px;opacity:.6}

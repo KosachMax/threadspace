@@ -1,0 +1,239 @@
+/* BB supplies this mode for phone-width viewports and coarse pointers. Keep
+   desktop density intact, including on a narrow desktop sidebar. */
+.ns-project-name-disclosure{display:none}
+.ns-sidebar[data-compact=true]{
+  --ns-indent:8px;
+  min-width:0;
+  padding:6px 6px max(12px,env(safe-area-inset-bottom));
+  font-size:14px;
+}
+.ns-sidebar[data-compact=true] .ns-row{
+  --ns-row-height:48px;
+  --ns-action-size:44px;
+  min-height:48px;
+  padding:0 0 0 calc(2px + min(var(--depth),4) * var(--ns-indent));
+  content-visibility:visible;
+}
+.ns-sidebar[data-compact=true] .ns-link{
+  min-height:48px;
+  padding:5px 0;
+  gap:7px;
+  -webkit-mask-image:none;
+  mask-image:none;
+}
+.ns-sidebar[data-compact=true] .ns-row-title{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  font-size:14px;
+  line-height:20px;
+}
+.ns-sidebar[data-compact=true] .ns-row-title *{white-space:normal}
+.ns-sidebar[data-compact=true] .ns-row-spacer{
+  display:none;
+}
+.ns-sidebar[data-compact=true] .ns-row.has-children>.ns-toggle{
+  position:relative;
+  display:flex;
+  width:44px;
+  height:48px;
+  min-height:44px;
+  transform:none;
+  top:auto;
+  left:auto;
+  background:none;
+}
+.ns-sidebar[data-compact=true] .ns-disclosure-provider{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:20px;
+  height:20px;
+}
+.ns-sidebar[data-compact=true] .ns-disclosure-provider .ns-provider{visibility:visible}
+.ns-sidebar[data-compact=true] .ns-row.has-children>.ns-toggle>svg{
+  position:absolute;
+  right:3px;
+  bottom:9px;
+  width:8px;
+  height:8px;
+}
+.ns-sidebar[data-compact=true] .ns-row-end{
+  display:flex;
+  align-self:center;
+  align-items:center;
+  gap:0;
+  margin-left:2px;
+  width:auto;
+  min-width:0;
+  height:44px;
+}
+.ns-sidebar[data-compact=true] .ns-row .ns-status{
+  display:none;
+}
+.ns-sidebar[data-compact=true] .ns-hover-tools{
+  position:static;
+  display:flex;
+  align-items:center;
+  transform:none;
+  width:44px;
+  height:44px;
+}
+.ns-sidebar[data-compact=true] .ns-hover-tools>.ns-archive{display:none}
+.ns-sidebar[data-compact=true] .ns-row-end .ns-icon-button{
+  width:44px;
+  height:44px;
+}
+.ns-sidebar[data-compact=true] .ns-shortcut{display:none}
+.ns-sidebar[data-compact=true] .ns-rename{
+  height:44px;
+  font-size:16px;
+}
+
+/* Project names already toggle their group. The compact header uses that
+   target instead of a second chevron button, leaving room for the title. */
+.ns-sidebar[data-compact=true] .ns-project-heading{
+  display:grid;
+  grid-template-columns:44px minmax(0,1fr) 44px;
+  align-items:center;
+  gap:0;
+  height:auto;
+  min-height:48px;
+  padding:0;
+}
+.ns-sidebar[data-compact=true] .ns-project-heading>.ns-toggle{
+  display:none;
+}
+.ns-sidebar[data-compact=true] .ns-project-emoji{
+  grid-column:1;
+  width:44px;
+  height:44px;
+}
+.ns-sidebar[data-compact=true] .ns-project-name{
+  grid-column:2;
+  min-width:0;
+  min-height:44px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 12px;
+  align-items:center;
+  gap:4px;
+  padding:2px 4px!important;
+  font-size:14px!important;
+  line-height:20px;
+}
+.ns-sidebar[data-compact=true] .ns-project-name-text{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  min-width:0;
+  overflow:hidden;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.ns-sidebar[data-compact=true] .ns-project-name-disclosure{
+  display:block;
+  width:12px;
+  height:12px;
+  color:var(--ns-faint);
+}
+.ns-sidebar[data-compact=true] .ns-project-heading .ns-project-add{
+  position:static;
+  grid-column:3;
+  grid-row:1;
+  transform:none;
+  display:inline-flex!important;
+  opacity:1;
+  width:44px;
+  height:44px;
+}
+.ns-sidebar[data-compact=true] .ns-project-heading .ns-project-summary{
+  grid-column:2 / 4;
+  grid-row:2;
+  justify-self:end;
+  min-height:24px;
+  margin:0 10px 4px 4px;
+  visibility:visible;
+}
+.ns-sidebar[data-compact=true] .ns-section-heading{
+  min-height:44px;
+  height:auto;
+  font-size:13px!important;
+  padding:8px 10px!important;
+}
+.ns-sidebar[data-compact=true] .ns-projects-label{
+  font-size:13px;
+  padding:0 12px;
+  margin:7px 0 5px;
+}
+.ns-sidebar[data-compact=true] .ns-empty-project,
+.ns-sidebar[data-compact=true] .ns-show-more,
+.ns-sidebar[data-compact=true] .ns-bottom-button{
+  min-height:44px;
+  font-size:14px!important;
+}
+.ns-sidebar[data-compact=true] .ns-empty-project,
+.ns-sidebar[data-compact=true] .ns-show-more{padding-left:52px!important}
+.ns-sidebar[data-compact=true] .ns-bottom{padding-top:12px}
+
+/* The compact picker lives inside the shared modal sheet. Its header stays
+   outside the scroll area; picker content remains reachable with a keyboard. */
+.ns-picker[data-compact=true]{
+  width:100%;
+  max-width:none;
+  min-width:0;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  overflow:visible;
+}.ns-picker[data-compact=true] .ns-picker-search{
+  height:44px;
+  margin:12px 16px 6px;
+}
+.ns-picker[data-compact=true] input,
+.ns-picker[data-compact=true] select{font-size:16px}
+.ns-picker[data-compact=true] .ns-emoji-categories{
+  margin:0 16px 6px;
+  gap:8px;
+}
+.ns-picker[data-compact=true] .ns-emoji-categories select{
+  min-height:44px;
+  font-size:14px;
+}
+.ns-picker[data-compact=true] .ns-icon-button{
+  width:44px;
+  height:44px;
+}
+.ns-picker[data-compact=true] .ns-emoji-grid{
+  grid-template-columns:repeat(auto-fit,minmax(44px,1fr));
+  min-height:0;
+  max-height:min(34dvh,300px);
+  padding:2px 16px 10px;
+  gap:2px;
+  overscroll-behavior:contain;
+}
+.ns-picker[data-compact=true] .ns-emoji-grid>button{
+  min-width:44px;
+  height:44px;
+  font-size:25px;
+}
+.ns-picker[data-compact=true] .ns-custom-emoji{
+  padding:10px 16px;
+  gap:10px;
+}
+.ns-picker[data-compact=true] .ns-custom-emoji label{font-size:12px}
+.ns-picker[data-compact=true] .ns-custom-emoji input{min-height:44px;font-size:16px}
+.ns-picker[data-compact=true] .ns-text-button{
+  min-height:44px;
+  padding:8px 10px!important;
+  font-size:14px!important;
+}
+.ns-picker[data-compact=true] .ns-colors{padding:6px 12px}
+.ns-picker[data-compact=true] .ns-color-option{
+  min-height:44px;
+  height:44px;
+  font-size:14px!important;
+}
+.ns-picker[data-compact=true] .ns-picker-footer{padding:6px 12px}
