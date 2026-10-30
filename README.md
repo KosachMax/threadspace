@@ -10,6 +10,7 @@ A Notion-style thread list for [BB](https://getbb.app). It replaces the sidebar 
 
 - [Features](#features)
 - [Status icons](#status-icons)
+- [Hover sidebar mode](#hover-sidebar-mode)
 - [Install](#install)
 - [Development](#development)
 - [Credits](#credits)
@@ -45,6 +46,18 @@ Each thread shows at most one icon in the column on the right. When several stat
 **Collapsed project or parent thread.** It shows a compact count instead of a single icon, for example `2` <img src="docs/status/working.svg" width="20" height="20" alt="working"> `/` `1` <img src="docs/status/waiting.svg" width="20" height="20" alt="waiting">: two threads working and one waiting for you inside. When nothing inside is working or waiting, nothing is shown.
 
 Other plugins can add their own row glyphs; Threadspace keeps them as they are.
+
+## Hover sidebar mode
+
+Keep the sidebar hidden and slide it in when you need it.
+
+- Turn it on in the Threadspace plugin settings, with the command **Threadspace: hide sidebar, show on hover** (default `⌘⇧S`, rebindable in Settings → Keyboard), or with `bb plugin config threadspace set sidebarHoverMode true`.
+- Turning it on collapses BB's sidebar; turning it off expands it again.
+- Move the pointer to the left edge of the window and the sidebar slides in over the content. It hides 250 ms after the pointer moves past it, and stays while a menu or popover is open.
+- **Sidebar opening speed** sets the delay and slide: instant, fast (default), normal or slow.
+- The setting is shared by every window. Mouse and pen only; touch screens keep the normal sidebar.
+
+This mode is **experimental**: BB has no public API for the sidebar, so it relies on BB's current sidebar markup. If a BB update changes it, the mode stays off and shows a notice instead of breaking the window.
 
 ## Install
 

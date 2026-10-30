@@ -9,6 +9,8 @@ Threadspace turns the BB sidebar into a Notion-style list of projects and thread
 - **Instant selection.** The thread you press highlights at once, while BB is still loading it.
 - **Keyboard and mouse.** Arrow keys move and fold rows. Drag projects to reorder them; the order syncs between windows.
 
+- **Hidden sidebar on hover (experimental).** Turn it on in settings or with `⌘⇧S`: the sidebar stays collapsed and slides in when the pointer reaches the left edge.
+
 ## Setup
 
 After installing, choose Threadspace as the thread list:

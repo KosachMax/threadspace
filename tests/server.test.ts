@@ -6,6 +6,11 @@ const hosts:ReturnType<typeof createFakePluginHost>[]=[];
 async function host(){const h=createFakePluginHost({pluginId:"threadspace"});hosts.push(h);await plugin(h.bb);return h;}
 afterEach(async()=>{await Promise.all(hosts.splice(0).map(h=>h.harness.lifecycle.dispose()));});
 describe("project emoji storage",()=>{
+  it("toggles hover sidebar mode through its setting",async()=>{
+    const {harness}=await host();
+    expect(await harness.behavior.callRpc("sidebar_hover_mode_toggle",{})).toEqual({enabled:true});
+    expect(await harness.behavior.callRpc("sidebar_hover_mode_toggle",{})).toEqual({enabled:false});
+  });
   it("keeps the dragged project order across plugin reloads",async()=>{
     const {harness}=await host();
     expect(await harness.behavior.callRpc("project_order_get",{})).toEqual([]);

@@ -21,7 +21,9 @@ import { InterfaceLanguageProvider, useLanguage, useStrings } from "./src/i18n";
 import { ThreadPreviewProvider, useThreadPreviewTrigger } from "./src/ThreadPreview";
 import { useCompactSidebar } from "./src/useCompactSidebar";
 import { titleRegenerationAction } from "./src/titleActions";
+import { SidebarPeekController, TOGGLE_PEEK_EVENT } from "./src/SidebarPeekController";
 import "./src/notion.css";
+import "./src/peek.css";
 import "./src/mobile.css";
 
 function targetFor(thread: PluginSidebarThread): PluginThreadActionTarget {
@@ -112,4 +114,7 @@ function NotionSidebarContent({activeThreadId,onNavigate,isCompactViewport}:Plug
     hasMoreArchived={data.experimental_archived?.hasNextPage} fetchingArchived={data.experimental_archived?.isFetchingNextPage} onMoreArchived={()=>void data.experimental_archived?.fetchNextPage().catch(()=>toast.error(t.loadArchiveError))}
   /></ThreadPreviewProvider>;
 }
-export default definePluginApp(app=>{app.slots.experimental_threadList({id:"notion-sidebar",title:"Threadspace · Notion",description:"Notion-style project tree, editable emoji and archive on hover.",component:NotionSidebar});app.slots.experimental_threadAction(titleRegenerationAction);});
+export default definePluginApp(app=>{app.slots.experimental_threadList({id:"notion-sidebar",title:"Threadspace · Notion",description:"Notion-style project tree, editable emoji and archive on hover.",component:NotionSidebar});app.slots.experimental_threadAction(titleRegenerationAction);
+  app.slots.experimental_appOverlay({id:"sidebar-hover-mode",component:SidebarPeekController});
+  app.commands.register({id:"toggle-sidebar-hover-mode",title:"Threadspace: hide sidebar, show on hover",defaultShortcut:{key:"s",mod:true,shift:true},run:()=>{window.dispatchEvent(new Event(TOGGLE_PEEK_EVENT));}});
+});

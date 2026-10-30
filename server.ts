@@ -22,6 +22,10 @@ export const rpcContract = defineRpcContract({
     input: z.object({ projectIds: z.array(projectId).max(2000) }).strict(),
     output: z.array(projectId).max(2000),
   },
+  sidebar_hover_mode_toggle: {
+    input: z.object({}).strict(),
+    output: z.object({ enabled: z.boolean() }),
+  },
   title_regenerate: {
     input: z.object({ threadId: z.string().min(1).max(200) }).strict(),
     output: titleRegenerationResultSchema,
@@ -38,7 +42,28 @@ export default function plugin(bb: BbPluginApi) {
     const saved = appearanceSchema.safeParse(await bb.storage.kv.get(`project:${id}`));
     return saved.success ? saved.data : { ...defaultAppearance };
   }
+  const sidebarSettings = bb.settings.define({
+    sidebarHoverMode: {
+      type: "boolean",
+      label: "Hide sidebar, show on hover",
+      description: "Keeps the left sidebar collapsed and slides it in when the pointer reaches the left edge. Toggle with ⌘⇧S.",
+      default: false,
+    },
+    sidebarHoverSpeed: {
+      type: "select",
+      label: "Sidebar opening speed",
+      description: "How quickly the hidden sidebar slides in.",
+      options: ["instant", "fast", "normal", "slow"],
+      experimental_optionLabels: { instant: "Instant", fast: "Fast", normal: "Normal", slow: "Slow" },
+      default: "fast",
+    },
+  });
   bb.rpc.register(rpcContract, {
+    sidebar_hover_mode_toggle: async () => {
+      const { sidebarHoverMode } = await sidebarSettings.get();
+      const next = await sidebarSettings.experimental_set({ sidebarHoverMode: !sidebarHoverMode });
+      return { enabled: next.sidebarHoverMode };
+    },
     title_regenerate: ({ threadId }) => {
       titles ??= createTitleRegenerator(bb.sdk);
       return titles.regenerate(threadId);

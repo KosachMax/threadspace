@@ -1,0 +1,29 @@
+/* Hover mode (src/sidebarPeek.ts): the collapsed sidebar slides in over the
+   content, below bb's menus and popovers (z-50). Its top, height and inset
+   stay bb's own, so it lands where the expanded sidebar sits: full height in
+   the browser, inside the window frame in the desktop app. */
+html[data-ns-peek-mode] .peer[data-side="left"][data-state="collapsed"] > .fixed {
+  transition: left var(--ns-peek-slide, 120ms) ease, visibility 0s linear var(--ns-peek-slide, 120ms);
+}
+html[data-ns-peek] .peer[data-side="left"][data-state="collapsed"] > .fixed {
+  left: var(--bb-window-frame-leading-lip, 0px) !important;
+  visibility: visible !important;
+  z-index: 45;
+  background: var(--sidebar);
+  border-right: 1px solid var(--border-hairline, rgba(55,53,47,.09));
+  box-shadow: rgba(15,15,15,.05) 0 0 0 1px, rgba(15,15,15,.1) 0 3px 6px, rgba(15,15,15,.2) 0 9px 24px;
+  transition: left var(--ns-peek-slide, 120ms) ease, visibility 0s;
+}
+/* Desktop app: bb's framed sidebar is transparent over the window; the peek
+   floats over the chat, so give it a solid card with the frame's radius. */
+html[data-ns-peek] [data-framed] .peer[data-side="left"][data-state="collapsed"] > .fixed {
+  border-radius: var(--bb-frame-card-radius, 8px);
+  border-right: 0;
+}
+html[data-ns-peek] [data-framed] .peer[data-side="left"][data-state="collapsed"] > .fixed [data-sidebar="sidebar"] {
+  background: var(--sidebar);
+  border-radius: inherit;
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-ns-peek-mode] .peer[data-side="left"] > .fixed { transition: none !important; }
+}
