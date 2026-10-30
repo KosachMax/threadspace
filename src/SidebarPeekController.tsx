@@ -20,7 +20,9 @@ export function SidebarPeekController() {
   useEffect(() => {
     if (!enabled) return;
     // Hover mode uses BB's sidebar markup, not a public API; stay inert if it changed.
-    if (!peekSupported()) { toast.error(t.peekUnsupported); return; }
+    // Phones and touch screens use BB's drawer; hover mode simply stays inactive there.
+    if (window.matchMedia?.("(hover: none), (pointer: coarse)").matches || window.innerWidth < 768) return;
+    if (!peekSupported()) { toast.error(t.peekUnsupported, { id: "threadspace-peek-unsupported" }); return; }
     const abort = new AbortController();
     const unmount = mountSidebarPeek(speed, abort.signal);
     return () => { abort.abort(); unmount(); };

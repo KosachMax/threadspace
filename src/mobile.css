@@ -237,3 +237,17 @@
   font-size:14px!important;
 }
 .ns-picker[data-compact=true] .ns-picker-footer{padding:6px 12px}
+
+/* ── Phone fixes: summary on the heading line, no sticky hover, nested indent ── */
+.ns-sidebar[data-compact=true] .ns-project-heading{grid-template-columns:44px minmax(0,1fr) auto 44px;padding-right:2px}
+.ns-sidebar[data-compact=true] .ns-project-heading .ns-project-summary{grid-column:3;grid-row:1;justify-self:end;align-self:center;min-height:0;margin:0 2px 0 6px;visibility:visible}
+.ns-sidebar[data-compact=true] .ns-project-heading .ns-project-add{grid-column:4;width:44px!important;height:44px!important}
+.ns-sidebar[data-compact=true] .ns-project-heading .ns-project-tools{display:none!important}
+/* A tap leaves :hover stuck on iOS; only the project colour may tint the row. */
+.ns-sidebar[data-compact=true] .ns-project-heading:hover{background:none}
+.ns-sidebar[data-compact=true] .ns-project:not([data-color=default])>.ns-project-heading,
+.ns-sidebar[data-compact=true] .ns-project:not([data-color=default])>.ns-project-heading:hover{background:var(--ns-tint)}
+.ns-sidebar[data-compact=true] .ns-row:hover:not(.is-active):not(.is-pending){background:none}
+/* Threads sit under the project name, one step deeper per level. */
+.ns-sidebar[data-compact=true] .ns-row{padding-left:calc(30px + min(var(--depth),4) * 14px)}
+.ns-sidebar[data-compact=true] .ns-waiting .ns-row{padding-left:6px}
