@@ -251,3 +251,10 @@
 /* Threads sit under the project name, one step deeper per level. */
 .ns-sidebar[data-compact=true] .ns-row{padding-left:calc(30px + min(var(--depth),4) * 14px)}
 .ns-sidebar[data-compact=true] .ns-waiting .ns-row{padding-left:6px}
+
+/* Collapsed project with work inside: the status takes the right column, like thread statuses; "+" returns when it opens. */
+.ns-sidebar[data-compact=true] .ns-project-heading:has(.ns-project-summary) .ns-project-add{display:none!important}
+.ns-sidebar[data-compact=true] .ns-project-heading .ns-project-summary{grid-column:4;justify-self:center;margin:0}
+/* Match BB's phone type scale: 15/22 rows, 15/600 project names. */
+.ns-sidebar[data-compact=true] .ns-row-title,.ns-sidebar[data-compact=true] .ns-row-title *{font-size:15px;line-height:22px}
+.ns-sidebar[data-compact=true] .ns-project-name,.ns-sidebar[data-compact=true] .ns-project-name-text{font-size:15px!important;font-weight:600!important;line-height:22px}
