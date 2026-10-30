@@ -129,3 +129,11 @@
 .ns-color-swatch[data-color=default]{background:var(--ns-popup)!important}
 .ns-color-swatch[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--ns-color)}
 .ns-picker-footer{display:flex;justify-content:space-between}
+
+/* Notion-like disclosure: on row hover the leading icon becomes a chevron in a small rounded box. */
+.ns-sidebar:not([data-compact=true]) .ns-row.has-children>.ns-toggle{width:22px;height:22px;left:calc(5px + (var(--depth) + 1) * var(--ns-indent));border-radius:5px;color:var(--ns-muted)!important;align-items:center;justify-content:center}
+.ns-sidebar:not([data-compact=true]) .ns-row.has-children>.ns-toggle svg{width:14px;height:14px}
+.ns-sidebar:not([data-compact=true]) .ns-row.has-children>.ns-toggle:hover{background:var(--ns-active)!important;color:var(--ns-text)!important}
+.ns-sidebar:not([data-compact=true]) .ns-row.has-children>.ns-toggle:focus-visible{display:flex;outline:2px solid var(--ns-ring);outline-offset:0}
+.ns-sidebar:not([data-compact=true]) .ns-row.has-children:has(>.ns-toggle:focus-visible) .ns-provider{visibility:hidden}
+.ns-sidebar:not([data-compact=true]) .ns-project-icon:hover{background:var(--ns-active)}
