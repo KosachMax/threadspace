@@ -23,6 +23,7 @@ A Notion-style thread list for [BB](https://getbb.app). It replaces the sidebar 
 - **Waiting for you.** Threads where an agent asked a question or needs approval are collected above the projects, with the project name and a count.
 - **Quiet statuses.** One column on the right shows a synchronised spinner, a question bubble for input, a warning triangle for errors, or a dot for unread results. A collapsed project or parent thread shows a compact count of work and questions inside it, and nothing when it is idle.
 - **Fast feedback.** The pressed thread highlights at once, before BB finishes switching threads.
+- **Parent disclosure.** Hover a parent thread and the provider icon becomes a chevron in a small rounded box, like Notion nested pages.
 - **Keyboard.** ↑/↓ move between rows, ←/→ fold and unfold, Enter opens.
 - **Drag projects** to reorder them. The order is stored by the plugin and synced between windows.
 - **Hover actions.** Pin, archive and the native thread menu appear on hover or keyboard focus. Archiving uses BB's own action, with confirmation and undo.
